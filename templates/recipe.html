@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ recipe['title'] }} {% endblock %}</h2>
+    <span class="badge badge-primary">{{ recipe['created'] }}</span>
+    <p>{{ recipe['content'] }}</p>
+{% endblock %}
