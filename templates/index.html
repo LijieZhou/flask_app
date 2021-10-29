@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Welcome to Lijie's Recipes {% endblock %}</h1>
+    <h1>{% block title %} Welcome to Lijie's Beer Recipes {% endblock %}</h1>
     {% for recipe in recipes %}
        <a href="{{ url_for('recipe', recipe_id=recipe['id']) }}">
            <h2>{{ recipe['title']}}</h2>
        </a>
        <span>{{ recipe['created'] }}</span>
+       <a href="{{ url_for('edit', recipe_id=recipe['id'])}}">
+         <span>Edit</span>
+       </a>
     {% endfor %}
 {% endblock %}
